@@ -18,6 +18,12 @@ body {
     margin-top: 100px;
 }
 
+/* الصفحة التانية */
+#page2 {
+    display: none;
+    padding: 20px;
+}
+
 input {
     padding: 10px;
     border-radius: 10px;
@@ -34,12 +40,6 @@ button {
     cursor: pointer;
 }
 
-/* الصفحة التانية */
-#page2 {
-    display: none;
-    padding: 20px;
-}
-
 video {
     width: 300px;
     border-radius: 20px;
@@ -47,12 +47,10 @@ video {
     box-shadow: 0 0 20px pink;
 }
 
-/* الرسالة */
 .message {
     margin-top: 20px;
     font-size: 18px;
     line-height: 1.8;
-    padding: 10px;
 }
 
 /* قلوب */
@@ -67,8 +65,8 @@ video {
     100% { transform: translateY(-600px); opacity: 0; }
 }
 </style>
-
 </head>
+
 <body>
 
 <!-- الصفحة الأولى -->
@@ -83,12 +81,14 @@ video {
 <div id="page2">
     <h1>💖 مفاجأة لصديقتي 💖</h1>
 
-    <video controls onclick="this.requestFullscreen()">
+    <video controls>
         <source src="video1.mp4" type="video/mp4">
+        المتصفح لا يدعم الفيديو
     </video>
 
-    <video controls onclick="this.requestFullscreen()">
+    <video controls>
         <source src="video2.mp4" type="video/mp4">
+        المتصفح لا يدعم الفيديو
     </video>
 
     <p class="message">
@@ -98,11 +98,10 @@ video {
 
 <script>
 
-// الكود
 function checkCode() {
-    let code = document.getElementById("code").value;
+    var code = document.getElementById("code").value;
 
-    if(code === "11200") {
+    if(code == "11200") {
         document.getElementById("page1").style.display = "none";
         document.getElementById("page2").style.display = "block";
         startHearts();
@@ -111,17 +110,17 @@ function checkCode() {
     }
 }
 
-// القلوب
 function startHearts() {
-    setInterval(() => {
-        let heart = document.createElement("div");
+    setInterval(function() {
+        var heart = document.createElement("div");
         heart.className = "heart";
         heart.innerHTML = "💖";
         heart.style.left = Math.random() * window.innerWidth + "px";
         heart.style.fontSize = (20 + Math.random()*20) + "px";
+
         document.body.appendChild(heart);
 
-        setTimeout(() => {
+        setTimeout(function() {
             heart.remove();
         }, 5000);
     }, 400);
