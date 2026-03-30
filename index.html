@@ -7,7 +7,9 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to bottom right, #3498db, #9b59b6); /* ألوان جذابة جديدة */
+    background: linear-gradient(45deg, #3498db, #9b59b6, #1abc9c, #16a085);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
     color: white;
     text-align: center;
     overflow-x: hidden;
@@ -31,7 +33,7 @@ button {
     margin-top: 15px;
     border: none;
     border-radius: 12px;
-    background: #e67e22; /* لون جديد للزر */
+    background: #e67e22;
     color: white;
     font-size: 16px;
     cursor: pointer;
@@ -60,10 +62,9 @@ button:hover {
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
 }
-
 .video-card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 40px rgba(0,0,0,0.5);
+    transform: scale(1.05);
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
 }
 
 video {
@@ -75,7 +76,9 @@ video {
 .video-text {
     font-size: 18px;
     margin-top: 10px;
-    color: #ffeaa7; /* لون لطيف للنصوص */
+    color: #ffeaa7;
+    opacity: 0;
+    animation: fadeInText 1.5s forwards;
 }
 
 /* النص الطويل */
@@ -87,6 +90,8 @@ video {
     margin: 20px auto;
     background: rgba(0,0,0,0.2);
     border-radius: 20px;
+    opacity: 0;
+    animation: fadeInText 2s forwards;
 }
 
 /* قلوب تتساقط من الأعلى */
@@ -102,6 +107,16 @@ video {
     0% { transform: translateY(0) rotate(0deg); opacity: 1; }
     100% { transform: translateY(800px) rotate(360deg); opacity: 0; }
 }
+
+@keyframes fadeInText {
+    to { opacity: 1; }
+}
+
+@keyframes gradientBG {
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
 </style>
 </head>
 <body>
@@ -116,7 +131,7 @@ video {
 
 <!-- الصفحة التانية -->
 <div id="page2">
-    <h1>💖 مفاجأة لصديقتي 💖</h1>
+    <h1>💖 بحبك يا صحبتي 💖</h1>
 
     <!-- أول فيديو -->
     <div class="video-card">
@@ -132,7 +147,7 @@ video {
     وجودك جنبي بيهون عليا كل حاجة وبيخليني دايمًا أحس بالأمان والراحة معاك… 
     الضحكة ليها معنى تاني وكل لحظة بنتكلم فيها بحس إن الدنيا لسه فيها خير… 
     ربنا يخليكي ليا وميحرمنيش منك أبدًا… 
-    إنتي مش بس صاحبتي إنتي أختي وسندي وضهري وأجمل حاجة حصلتلي في حياتي… 
+    إنتي مش بس صاحبتي إنتي أختي وسندي وضهري وأجمل حاجة حصلتلي في حياتي 
     وأنا مهما أقول مش هقدر أوصف قيمتك عندي… 
     بس كل اللي أقدر أقوله إني بحبك جدًا جدًا وبتمنى نفضل مع بعض دايمًا 💖✨
     </div>
