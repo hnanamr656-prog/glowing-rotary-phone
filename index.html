@@ -7,7 +7,7 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to bottom right, #1abc9c, #16a085); /* ألوان جديدة جميلة */
+    background: linear-gradient(to bottom right, #3498db, #9b59b6); /* ألوان جذابة جديدة */
     color: white;
     text-align: center;
     overflow-x: hidden;
@@ -31,14 +31,14 @@ button {
     margin-top: 15px;
     border: none;
     border-radius: 12px;
-    background: #e74c3c; /* لون جديد للزر */
+    background: #e67e22; /* لون جديد للزر */
     color: white;
     font-size: 16px;
     cursor: pointer;
     transition: 0.3s;
 }
 button:hover {
-    background: #c0392b;
+    background: #d35400;
 }
 
 /* الصفحة التانية */
@@ -57,6 +57,7 @@ button:hover {
     margin: 25px auto;
     max-width: 650px;
     box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -70,7 +71,14 @@ video {
     border-radius: 20px;
 }
 
-/* النص */
+/* نصوص الفيديوهات */
+.video-text {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #ffeaa7; /* لون لطيف للنصوص */
+}
+
+/* النص الطويل */
 .message {
     font-size: 20px;
     line-height: 2;
@@ -110,21 +118,16 @@ video {
 <div id="page2">
     <h1>💖 مفاجأة لصديقتي 💖</h1>
 
+    <!-- أول فيديو -->
     <div class="video-card">
         <video controls>
             <source src="video1.mp4" type="video/mp4">
-            المتصفح لا يدعم الفيديو
         </video>
+        <p class="video-text">بحكككككككك 💖</p>
     </div>
 
-    <div class="video-card">
-        <video controls>
-            <source src="video2.mp4" type="video/mp4">
-            المتصفح لا يدعم الفيديو
-        </video>
-    </div>
-
-    <p class="message">
+    <!-- النص الكبير -->
+    <div class="message">
     حبيبتي وصاحبتي الغالية بجد مش عارفة أوصف قد إيه أنا بحبك وقد إيه وجودك في حياتي فرق معايا… 
     وجودك جنبي بيهون عليا كل حاجة وبيخليني دايمًا أحس بالأمان والراحة معاك… 
     الضحكة ليها معنى تاني وكل لحظة بنتكلم فيها بحس إن الدنيا لسه فيها خير… 
@@ -132,7 +135,15 @@ video {
     إنتي مش بس صاحبتي إنتي أختي وسندي وضهري وأجمل حاجة حصلتلي في حياتي… 
     وأنا مهما أقول مش هقدر أوصف قيمتك عندي… 
     بس كل اللي أقدر أقوله إني بحبك جدًا جدًا وبتمنى نفضل مع بعض دايمًا 💖✨
-    </p>
+    </div>
+
+    <!-- ثاني فيديو -->
+    <div class="video-card">
+        <video controls>
+            <source src="video2.mp4" type="video/mp4">
+        </video>
+        <p class="video-text">وبحبك أووووي 😍</p>
+    </div>
 </div>
 
 <script>
