@@ -6,23 +6,16 @@
 <style>
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #ff6ec7, #8e2de2);
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom right, #1abc9c, #16a085); /* ألوان جديدة جميلة */
     color: white;
     text-align: center;
+    overflow-x: hidden;
 }
 
 /* الصفحة الأولى */
 #page1 {
     margin-top: 100px;
-}
-
-/* الصفحة التانية */
-#page2 {
-    display: none;
-    padding: 20px;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
 }
 
 input {
@@ -38,30 +31,43 @@ button {
     margin-top: 15px;
     border: none;
     border-radius: 12px;
-    background: #ff6ec7;
+    background: #e74c3c; /* لون جديد للزر */
     color: white;
     font-size: 16px;
     cursor: pointer;
     transition: 0.3s;
 }
 button:hover {
-    background: #ff3fb5;
+    background: #c0392b;
 }
 
-/* الفيديوهات */
-.video-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 30px 0;
+/* الصفحة التانية */
+#page2 {
+    display: none;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* الفيديوهات داخل كارد */
+.video-card {
+    background: rgba(255,255,255,0.1);
+    border-radius: 25px;
+    padding: 15px;
+    margin: 25px auto;
+    max-width: 650px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.video-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 40px rgba(0,0,0,0.5);
 }
 
 video {
-    width: 80%;
-    max-width: 600px;
-    border-radius: 25px;
-    margin: 20px 0;
-    box-shadow: 0 0 30px #ff6ec7;
+    width: 100%;
+    border-radius: 20px;
 }
 
 /* النص */
@@ -70,20 +76,23 @@ video {
     line-height: 2;
     padding: 20px;
     max-width: 800px;
-    margin: auto;
-    text-align: center;
+    margin: 20px auto;
+    background: rgba(0,0,0,0.2);
+    border-radius: 20px;
 }
 
-/* قلوب */
+/* قلوب تتساقط من الأعلى */
 .heart {
     position: fixed;
-    bottom: 0;
-    animation: floatUp 5s linear infinite;
+    top: -50px;
+    animation: fall 5s linear infinite;
+    pointer-events: none;
+    z-index: 9999;
 }
 
-@keyframes floatUp {
-    0% { transform: translateY(0); opacity: 1; }
-    100% { transform: translateY(-600px); opacity: 0; }
+@keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(800px) rotate(360deg); opacity: 0; }
 }
 </style>
 </head>
@@ -101,11 +110,14 @@ video {
 <div id="page2">
     <h1>💖 مفاجأة لصديقتي 💖</h1>
 
-    <div class="video-container">
+    <div class="video-card">
         <video controls>
             <source src="video1.mp4" type="video/mp4">
             المتصفح لا يدعم الفيديو
         </video>
+    </div>
+
+    <div class="video-card">
         <video controls>
             <source src="video2.mp4" type="video/mp4">
             المتصفح لا يدعم الفيديو
